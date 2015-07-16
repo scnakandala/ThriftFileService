@@ -1,6 +1,6 @@
 package org.apache.airavata.services.impl;
 
-import org.apache.airavata.services.StreamFileService;
+import org.apache.airavata.services.FileResource;
 import org.apache.thrift.server.TNonblockingServer;
 import org.apache.thrift.server.TServer;
 import org.apache.thrift.transport.TNonblockingServerSocket;
@@ -10,13 +10,13 @@ import org.apache.thrift.transport.TTransportException;
 /**
  * Created by dimuthuupeksha on 7/16/15.
  */
-public class StreamFileServer {
+public class FileService {
     private void start() {
         try {
 
             TNonblockingServerTransport theServerSocket = new TNonblockingServerSocket(7911);
-            StreamFileService.Processor theProcessor = new StreamFileService.Processor(
-                    new StreamFileServiceImpl());
+            FileResource.Processor theProcessor = new FileResource.Processor(
+                    new FileResourceImpl());
             TServer theServer = new TNonblockingServer(
                     new TNonblockingServer.Args(theServerSocket)
                             .processor(theProcessor));
@@ -31,7 +31,7 @@ public class StreamFileServer {
     }
 
     public static void main(String[] args) {
-        StreamFileServer theFileServer = new StreamFileServer();
+        FileService theFileServer = new FileService();
         theFileServer.start();
     }
 
