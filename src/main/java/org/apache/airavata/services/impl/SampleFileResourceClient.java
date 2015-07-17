@@ -14,9 +14,10 @@ import java.io.*;
 import java.nio.ByteBuffer;
 
 /**
+ * Sample Thrift client to invoke service methods
  * @author Dimuthu
  */
-public class FileResourceClient {
+public class SampleFileResourceClient {
     private static FileResource.Client client;
     private static final String HOST = "127.0.0.1";
     private static final int PORT = 7911;
@@ -60,7 +61,7 @@ public class FileResourceClient {
 
 
     public static void main(String ar[]) {
-        FileResourceClient client = new FileResourceClient();
+        SampleFileResourceClient client = new SampleFileResourceClient();
         client.downloadFile("/Users/dimuthuupeksha/file_manager_tests/sample/jobslist.xml","/Users/dimuthuupeksha/file_manager_tests/new/jobslist.xml");
         client.uploadFile("/Users/dimuthuupeksha/file_manager_tests/sample/jobslist.xml", "/Users/dimuthuupeksha/file_manager_tests/new", "jobslist2.xml");
     }
