@@ -11,9 +11,6 @@ import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Dimuthu
- */
 public class FileResourceImpl implements FileResource.Iface {
 
     private static final String DEFAULT_ROOT_PATH = "/temp";

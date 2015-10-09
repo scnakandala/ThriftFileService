@@ -15,7 +15,6 @@ import java.nio.ByteBuffer;
 
 /**
  * Sample Thrift client to invoke service methods
- * @author Dimuthu
  */
 public class SampleFileResourceClient {
     private static FileResource.Client client;

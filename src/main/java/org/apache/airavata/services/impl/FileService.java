@@ -7,9 +7,6 @@ import org.apache.thrift.transport.TNonblockingServerSocket;
 import org.apache.thrift.transport.TNonblockingServerTransport;
 import org.apache.thrift.transport.TTransportException;
 
-/**
- * @author Dimuthu
- */
 public class FileService {
     private void start() {
         try {
