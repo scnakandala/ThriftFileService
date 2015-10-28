@@ -32,8 +32,12 @@ public class FileResourceImpl implements FileResource.Iface {
 
     public boolean uploadFileForPath(String accessToken, String path, String fileName, ByteBuffer buffer) throws TException {
         byte[] bytes = ArrayUtils.subarray(buffer.array(), buffer.position(), buffer.limit());
-        File file = new File(path+File.separator+fileName);
+        File file = new File(DEFAULT_ROOT_PATH + File.separator + path + File.separator + fileName);
         try {
+            File parent = file.getParentFile();
+            if(!parent.exists() && !parent.mkdirs()){
+                throw new IllegalStateException("Couldn't create dir: " + parent);
+            }
             if (!file.exists()) {
                 file.createNewFile();
             }

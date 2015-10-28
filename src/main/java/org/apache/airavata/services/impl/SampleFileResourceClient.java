@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 public class SampleFileResourceClient {
 
     private static FileResource.Client client;
-    private static final String HOST = "seagrid.org";
+    private static final String HOST = "127.0.0.1";
     private static final int PORT = 9000;
 
     public static FileResource.Client getClient(){
@@ -62,7 +62,7 @@ public class SampleFileResourceClient {
 
     public static void main(String ar[]) {
         SampleFileResourceClient client = new SampleFileResourceClient();
-        client.downloadFile("/Users/dimuthuupeksha/file_manager_tests/sample/jobslist.xml","/Users/dimuthuupeksha/file_manager_tests/new/jobslist.xml");
-        client.uploadFile("/Users/dimuthuupeksha/file_manager_tests/sample/jobslist.xml", "/Users/dimuthuupeksha/file_manager_tests/new", "jobslist2.xml");
+//        client.downloadFile("/Users/dimuthuupeksha/file_manager_tests/sample/jobslist.xml","/Users/dimuthuupeksha/file_manager_tests/new/jobslist.xml");
+        client.uploadFile("/Users/supun/Downloads/gaussian.in.com", "test-supun", "jobslist2.xml");
     }
 }
