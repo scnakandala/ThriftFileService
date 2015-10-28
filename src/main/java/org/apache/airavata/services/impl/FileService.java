@@ -8,16 +8,17 @@ import org.apache.thrift.transport.TNonblockingServerTransport;
 import org.apache.thrift.transport.TTransportException;
 
 public class FileService {
-    private void start() {
-        try {
 
-            TNonblockingServerTransport theServerSocket = new TNonblockingServerSocket(7911);
+    private void start() {
+
+        try {
+            TNonblockingServerTransport theServerSocket = new TNonblockingServerSocket(9000);
             FileResource.Processor theProcessor = new FileResource.Processor(
                     new FileResourceImpl());
             TServer theServer = new TNonblockingServer(
                     new TNonblockingServer.Args(theServerSocket)
                             .processor(theProcessor));
-            System.out.println("Server starting on port 7911...");
+            System.out.println("Server starting on port 9000...");
 
             theServer.serve();
 

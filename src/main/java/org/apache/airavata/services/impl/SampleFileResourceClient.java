@@ -17,9 +17,10 @@ import java.nio.ByteBuffer;
  * Sample Thrift client to invoke service methods
  */
 public class SampleFileResourceClient {
+
     private static FileResource.Client client;
-    private static final String HOST = "127.0.0.1";
-    private static final int PORT = 7911;
+    private static final String HOST = "seagrid.org";
+    private static final int PORT = 9000;
 
     public static FileResource.Client getClient(){
         if(client==null){

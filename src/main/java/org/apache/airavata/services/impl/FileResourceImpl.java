@@ -13,7 +13,7 @@ import java.util.List;
 
 public class FileResourceImpl implements FileResource.Iface {
 
-    private static final String DEFAULT_ROOT_PATH = "/temp";
+    private static final String DEFAULT_ROOT_PATH = "/var/www/portal/experimentData";
 
     public void init() throws TException {
 

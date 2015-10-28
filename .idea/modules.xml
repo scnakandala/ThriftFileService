@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ThriftFileService.iml" filepath="$PROJECT_DIR$/ThriftFileService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AiravataFileManager.iml" filepath="$PROJECT_DIR$/AiravataFileManager.iml" />
     </modules>
   </component>
 </project>
