@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e17ce55-9b29-4003-8ae7-6bcf753cf688" name="Default" comment="fixing some issues">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+    <list default="true" id="5e17ce55-9b29-4003-8ae7-6bcf753cf688" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ThriftFileService.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="84" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.3179551">
+              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -75,10 +69,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SampleFileResourceClient.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SampleFileResourceClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/airavata/services/impl/SampleFileResourceClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39276809">
+            <state vertical-scroll-proportion="0.0">
               <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
               <folding />
             </state>
@@ -108,11 +102,11 @@
         <option value="$PROJECT_DIR$/src/main/java/org/apache/airavata/service/StreamFileService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/apache/airavata/services/FileChunk.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/apache/airavata/services/StreamFileService.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/apache/airavata/services/impl/FileService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/apache/airavata/services/impl/FileResourceImpl.java" />
         <option value="$PROJECT_DIR$/thrift-interface-descriptors/FileManager.thrift" />
         <option value="$PROJECT_DIR$/src/main/java/org/apache/airavata/services/impl/SampleFileResourceClient.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -466,7 +460,7 @@
       <updated>1436895370767</updated>
       <workItem from="1444420058471" duration="854000" />
       <workItem from="1446064754037" duration="257000" />
-      <workItem from="1446065103088" duration="612000" />
+      <workItem from="1446065103088" duration="938000" />
     </task>
     <task id="LOCAL-00001" summary="some code cleaning">
       <created>1444421274546</created>
@@ -480,11 +474,17 @@
       <option name="project" value="LOCAL" />
       <updated>1446065660750</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="removing idea files">
+      <created>1446065729056</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1446065729056</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1723000" />
+    <option name="totallyTimeSpent" value="2049000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -524,7 +524,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="some code cleaning" />
     <MESSAGE value="fixing some issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing some issues" />
+    <MESSAGE value="removing idea files" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing idea files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -618,14 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="84" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -661,8 +654,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/airavata/services/impl/SampleFileResourceClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39276809">
+        <state vertical-scroll-proportion="0.0">
           <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3179551">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
           <folding />
         </state>
       </provider>
