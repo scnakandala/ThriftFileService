@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 public class SampleFileResourceClient {
 
     private static FileResource.Client client;
-    private static final String HOST = "127.0.0.1";
+    private static final String HOST = "seagrid.org";
     private static final int PORT = 9000;
 
     public static FileResource.Client getClient(){
@@ -58,7 +58,14 @@ public class SampleFileResourceClient {
         }
     }
 
-
+    public boolean isDirectoryExists(String path){
+        try{
+            return getClient().isDirectoryExists("", path);
+        } catch (TException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
     public static void main(String ar[]) {
         SampleFileResourceClient client = new SampleFileResourceClient();

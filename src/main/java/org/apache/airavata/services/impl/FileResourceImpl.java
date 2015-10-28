@@ -175,4 +175,22 @@ public class FileResourceImpl implements FileResource.Iface {
     public boolean getRemoteFile(String accessToken, String host, String path) throws TException {
         return false;
     }
+
+    @Override
+    public boolean isDirectoryExists(String accessToken, String path) throws TException {
+        File file = new File(path);
+        if(file.exists() && file.isDirectory()){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean isFileExists(String accessToken, String path) throws TException {
+        File file = new File(path);
+        if(file.exists()){
+            return true;
+        }
+        return false;
+    }
 }

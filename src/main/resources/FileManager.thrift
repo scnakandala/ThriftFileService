@@ -12,4 +12,6 @@ service FileResource {
 	bool deleteFile(1: string accessToken, 2: string path)
 	bool rename(1: string accessToken, 2: string path, 3: string name)
 	bool getRemoteFile(1: string accessToken, 2: string host, 3: string path)
+	bool isDirectoryExists(1: string accessToken, 2: string path)
+	bool isFileExists(1: string accessToken, 2: string path)
 }
