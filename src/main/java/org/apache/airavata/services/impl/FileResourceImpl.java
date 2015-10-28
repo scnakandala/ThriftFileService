@@ -177,7 +177,7 @@ public class FileResourceImpl implements FileResource.Iface {
     }
 
     @Override
-    public boolean isDirectoryExists(String accessToken, String path) throws TException {
+    public boolean directoryExists(String accessToken, String path) throws TException {
         File file = new File(path);
         if(file.exists() && file.isDirectory()){
             return true;
@@ -186,7 +186,7 @@ public class FileResourceImpl implements FileResource.Iface {
     }
 
     @Override
-    public boolean isFileExists(String accessToken, String path) throws TException {
+    public boolean fileExists(String accessToken, String path) throws TException {
         File file = new File(path);
         if(file.exists()){
             return true;

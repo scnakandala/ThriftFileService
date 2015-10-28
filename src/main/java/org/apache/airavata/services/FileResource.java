@@ -61,9 +61,9 @@ public class FileResource {
 
     public boolean getRemoteFile(String accessToken, String host, String path) throws org.apache.thrift.TException;
 
-    public boolean isDirectoryExists(String accessToken, String path) throws org.apache.thrift.TException;
+    public boolean directoryExists(String accessToken, String path) throws org.apache.thrift.TException;
 
-    public boolean isFileExists(String accessToken, String path) throws org.apache.thrift.TException;
+    public boolean fileExists(String accessToken, String path) throws org.apache.thrift.TException;
 
   }
 
@@ -91,9 +91,9 @@ public class FileResource {
 
     public void getRemoteFile(String accessToken, String host, String path, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
 
-    public void isDirectoryExists(String accessToken, String path, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
+    public void directoryExists(String accessToken, String path, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
 
-    public void isFileExists(String accessToken, String path, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
+    public void fileExists(String accessToken, String path, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
 
   }
 
@@ -382,52 +382,52 @@ public class FileResource {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "getRemoteFile failed: unknown result");
     }
 
-    public boolean isDirectoryExists(String accessToken, String path) throws org.apache.thrift.TException
+    public boolean directoryExists(String accessToken, String path) throws org.apache.thrift.TException
     {
-      send_isDirectoryExists(accessToken, path);
-      return recv_isDirectoryExists();
+      send_directoryExists(accessToken, path);
+      return recv_directoryExists();
     }
 
-    public void send_isDirectoryExists(String accessToken, String path) throws org.apache.thrift.TException
+    public void send_directoryExists(String accessToken, String path) throws org.apache.thrift.TException
     {
-      isDirectoryExists_args args = new isDirectoryExists_args();
+      directoryExists_args args = new directoryExists_args();
       args.setAccessToken(accessToken);
       args.setPath(path);
-      sendBase("isDirectoryExists", args);
+      sendBase("directoryExists", args);
     }
 
-    public boolean recv_isDirectoryExists() throws org.apache.thrift.TException
+    public boolean recv_directoryExists() throws org.apache.thrift.TException
     {
-      isDirectoryExists_result result = new isDirectoryExists_result();
-      receiveBase(result, "isDirectoryExists");
+      directoryExists_result result = new directoryExists_result();
+      receiveBase(result, "directoryExists");
       if (result.isSetSuccess()) {
         return result.success;
       }
-      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "isDirectoryExists failed: unknown result");
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "directoryExists failed: unknown result");
     }
 
-    public boolean isFileExists(String accessToken, String path) throws org.apache.thrift.TException
+    public boolean fileExists(String accessToken, String path) throws org.apache.thrift.TException
     {
-      send_isFileExists(accessToken, path);
-      return recv_isFileExists();
+      send_fileExists(accessToken, path);
+      return recv_fileExists();
     }
 
-    public void send_isFileExists(String accessToken, String path) throws org.apache.thrift.TException
+    public void send_fileExists(String accessToken, String path) throws org.apache.thrift.TException
     {
-      isFileExists_args args = new isFileExists_args();
+      fileExists_args args = new fileExists_args();
       args.setAccessToken(accessToken);
       args.setPath(path);
-      sendBase("isFileExists", args);
+      sendBase("fileExists", args);
     }
 
-    public boolean recv_isFileExists() throws org.apache.thrift.TException
+    public boolean recv_fileExists() throws org.apache.thrift.TException
     {
-      isFileExists_result result = new isFileExists_result();
-      receiveBase(result, "isFileExists");
+      fileExists_result result = new fileExists_result();
+      receiveBase(result, "fileExists");
       if (result.isSetSuccess()) {
         return result.success;
       }
-      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "isFileExists failed: unknown result");
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "fileExists failed: unknown result");
     }
 
   }
@@ -845,25 +845,25 @@ public class FileResource {
       }
     }
 
-    public void isDirectoryExists(String accessToken, String path, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
+    public void directoryExists(String accessToken, String path, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
       checkReady();
-      isDirectoryExists_call method_call = new isDirectoryExists_call(accessToken, path, resultHandler, this, ___protocolFactory, ___transport);
+      directoryExists_call method_call = new directoryExists_call(accessToken, path, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class isDirectoryExists_call extends org.apache.thrift.async.TAsyncMethodCall {
+    public static class directoryExists_call extends org.apache.thrift.async.TAsyncMethodCall {
       private String accessToken;
       private String path;
-      public isDirectoryExists_call(String accessToken, String path, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public directoryExists_call(String accessToken, String path, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.accessToken = accessToken;
         this.path = path;
       }
 
       public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("isDirectoryExists", org.apache.thrift.protocol.TMessageType.CALL, 0));
-        isDirectoryExists_args args = new isDirectoryExists_args();
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("directoryExists", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        directoryExists_args args = new directoryExists_args();
         args.setAccessToken(accessToken);
         args.setPath(path);
         args.write(prot);
@@ -876,29 +876,29 @@ public class FileResource {
         }
         org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
         org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
-        return (new Client(prot)).recv_isDirectoryExists();
+        return (new Client(prot)).recv_directoryExists();
       }
     }
 
-    public void isFileExists(String accessToken, String path, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
+    public void fileExists(String accessToken, String path, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
       checkReady();
-      isFileExists_call method_call = new isFileExists_call(accessToken, path, resultHandler, this, ___protocolFactory, ___transport);
+      fileExists_call method_call = new fileExists_call(accessToken, path, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class isFileExists_call extends org.apache.thrift.async.TAsyncMethodCall {
+    public static class fileExists_call extends org.apache.thrift.async.TAsyncMethodCall {
       private String accessToken;
       private String path;
-      public isFileExists_call(String accessToken, String path, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public fileExists_call(String accessToken, String path, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.accessToken = accessToken;
         this.path = path;
       }
 
       public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("isFileExists", org.apache.thrift.protocol.TMessageType.CALL, 0));
-        isFileExists_args args = new isFileExists_args();
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("fileExists", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        fileExists_args args = new fileExists_args();
         args.setAccessToken(accessToken);
         args.setPath(path);
         args.write(prot);
@@ -911,7 +911,7 @@ public class FileResource {
         }
         org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
         org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
-        return (new Client(prot)).recv_isFileExists();
+        return (new Client(prot)).recv_fileExists();
       }
     }
 
@@ -939,8 +939,8 @@ public class FileResource {
       processMap.put("deleteFile", new deleteFile());
       processMap.put("rename", new rename());
       processMap.put("getRemoteFile", new getRemoteFile());
-      processMap.put("isDirectoryExists", new isDirectoryExists());
-      processMap.put("isFileExists", new isFileExists());
+      processMap.put("directoryExists", new directoryExists());
+      processMap.put("fileExists", new fileExists());
       return processMap;
     }
 
@@ -1170,43 +1170,43 @@ public class FileResource {
       }
     }
 
-    public static class isDirectoryExists<I extends Iface> extends org.apache.thrift.ProcessFunction<I, isDirectoryExists_args> {
-      public isDirectoryExists() {
-        super("isDirectoryExists");
+    public static class directoryExists<I extends Iface> extends org.apache.thrift.ProcessFunction<I, directoryExists_args> {
+      public directoryExists() {
+        super("directoryExists");
       }
 
-      public isDirectoryExists_args getEmptyArgsInstance() {
-        return new isDirectoryExists_args();
+      public directoryExists_args getEmptyArgsInstance() {
+        return new directoryExists_args();
       }
 
       protected boolean isOneway() {
         return false;
       }
 
-      public isDirectoryExists_result getResult(I iface, isDirectoryExists_args args) throws org.apache.thrift.TException {
-        isDirectoryExists_result result = new isDirectoryExists_result();
-        result.success = iface.isDirectoryExists(args.accessToken, args.path);
+      public directoryExists_result getResult(I iface, directoryExists_args args) throws org.apache.thrift.TException {
+        directoryExists_result result = new directoryExists_result();
+        result.success = iface.directoryExists(args.accessToken, args.path);
         result.setSuccessIsSet(true);
         return result;
       }
     }
 
-    public static class isFileExists<I extends Iface> extends org.apache.thrift.ProcessFunction<I, isFileExists_args> {
-      public isFileExists() {
-        super("isFileExists");
+    public static class fileExists<I extends Iface> extends org.apache.thrift.ProcessFunction<I, fileExists_args> {
+      public fileExists() {
+        super("fileExists");
       }
 
-      public isFileExists_args getEmptyArgsInstance() {
-        return new isFileExists_args();
+      public fileExists_args getEmptyArgsInstance() {
+        return new fileExists_args();
       }
 
       protected boolean isOneway() {
         return false;
       }
 
-      public isFileExists_result getResult(I iface, isFileExists_args args) throws org.apache.thrift.TException {
-        isFileExists_result result = new isFileExists_result();
-        result.success = iface.isFileExists(args.accessToken, args.path);
+      public fileExists_result getResult(I iface, fileExists_args args) throws org.apache.thrift.TException {
+        fileExists_result result = new fileExists_result();
+        result.success = iface.fileExists(args.accessToken, args.path);
         result.setSuccessIsSet(true);
         return result;
       }
@@ -1236,8 +1236,8 @@ public class FileResource {
       processMap.put("deleteFile", new deleteFile());
       processMap.put("rename", new rename());
       processMap.put("getRemoteFile", new getRemoteFile());
-      processMap.put("isDirectoryExists", new isDirectoryExists());
-      processMap.put("isFileExists", new isFileExists());
+      processMap.put("directoryExists", new directoryExists());
+      processMap.put("fileExists", new fileExists());
       return processMap;
     }
 
@@ -1807,20 +1807,20 @@ public class FileResource {
       }
     }
 
-    public static class isDirectoryExists<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, isDirectoryExists_args, Boolean> {
-      public isDirectoryExists() {
-        super("isDirectoryExists");
+    public static class directoryExists<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, directoryExists_args, Boolean> {
+      public directoryExists() {
+        super("directoryExists");
       }
 
-      public isDirectoryExists_args getEmptyArgsInstance() {
-        return new isDirectoryExists_args();
+      public directoryExists_args getEmptyArgsInstance() {
+        return new directoryExists_args();
       }
 
       public AsyncMethodCallback<Boolean> getResultHandler(final AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
         return new AsyncMethodCallback<Boolean>() { 
           public void onComplete(Boolean o) {
-            isDirectoryExists_result result = new isDirectoryExists_result();
+            directoryExists_result result = new directoryExists_result();
             result.success = o;
             result.setSuccessIsSet(true);
             try {
@@ -1834,7 +1834,7 @@ public class FileResource {
           public void onError(Exception e) {
             byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
             org.apache.thrift.TBase msg;
-            isDirectoryExists_result result = new isDirectoryExists_result();
+            directoryExists_result result = new directoryExists_result();
             {
               msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
               msg = (org.apache.thrift.TBase)new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
@@ -1854,25 +1854,25 @@ public class FileResource {
         return false;
       }
 
-      public void start(I iface, isDirectoryExists_args args, org.apache.thrift.async.AsyncMethodCallback<Boolean> resultHandler) throws TException {
-        iface.isDirectoryExists(args.accessToken, args.path,resultHandler);
+      public void start(I iface, directoryExists_args args, org.apache.thrift.async.AsyncMethodCallback<Boolean> resultHandler) throws TException {
+        iface.directoryExists(args.accessToken, args.path,resultHandler);
       }
     }
 
-    public static class isFileExists<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, isFileExists_args, Boolean> {
-      public isFileExists() {
-        super("isFileExists");
+    public static class fileExists<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, fileExists_args, Boolean> {
+      public fileExists() {
+        super("fileExists");
       }
 
-      public isFileExists_args getEmptyArgsInstance() {
-        return new isFileExists_args();
+      public fileExists_args getEmptyArgsInstance() {
+        return new fileExists_args();
       }
 
       public AsyncMethodCallback<Boolean> getResultHandler(final AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
         return new AsyncMethodCallback<Boolean>() { 
           public void onComplete(Boolean o) {
-            isFileExists_result result = new isFileExists_result();
+            fileExists_result result = new fileExists_result();
             result.success = o;
             result.setSuccessIsSet(true);
             try {
@@ -1886,7 +1886,7 @@ public class FileResource {
           public void onError(Exception e) {
             byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
             org.apache.thrift.TBase msg;
-            isFileExists_result result = new isFileExists_result();
+            fileExists_result result = new fileExists_result();
             {
               msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
               msg = (org.apache.thrift.TBase)new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
@@ -1906,8 +1906,8 @@ public class FileResource {
         return false;
       }
 
-      public void start(I iface, isFileExists_args args, org.apache.thrift.async.AsyncMethodCallback<Boolean> resultHandler) throws TException {
-        iface.isFileExists(args.accessToken, args.path,resultHandler);
+      public void start(I iface, fileExists_args args, org.apache.thrift.async.AsyncMethodCallback<Boolean> resultHandler) throws TException {
+        iface.fileExists(args.accessToken, args.path,resultHandler);
       }
     }
 
@@ -11486,16 +11486,16 @@ public class FileResource {
 
   }
 
-  public static class isDirectoryExists_args implements org.apache.thrift.TBase<isDirectoryExists_args, isDirectoryExists_args._Fields>, java.io.Serializable, Cloneable, Comparable<isDirectoryExists_args>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("isDirectoryExists_args");
+  public static class directoryExists_args implements org.apache.thrift.TBase<directoryExists_args, directoryExists_args._Fields>, java.io.Serializable, Cloneable, Comparable<directoryExists_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("directoryExists_args");
 
     private static final org.apache.thrift.protocol.TField ACCESS_TOKEN_FIELD_DESC = new org.apache.thrift.protocol.TField("accessToken", org.apache.thrift.protocol.TType.STRING, (short)1);
     private static final org.apache.thrift.protocol.TField PATH_FIELD_DESC = new org.apache.thrift.protocol.TField("path", org.apache.thrift.protocol.TType.STRING, (short)2);
 
     private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
     static {
-      schemes.put(StandardScheme.class, new isDirectoryExists_argsStandardSchemeFactory());
-      schemes.put(TupleScheme.class, new isDirectoryExists_argsTupleSchemeFactory());
+      schemes.put(StandardScheme.class, new directoryExists_argsStandardSchemeFactory());
+      schemes.put(TupleScheme.class, new directoryExists_argsTupleSchemeFactory());
     }
 
     public String accessToken; // required
@@ -11571,13 +11571,13 @@ public class FileResource {
       tmpMap.put(_Fields.PATH, new org.apache.thrift.meta_data.FieldMetaData("path", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(isDirectoryExists_args.class, metaDataMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(directoryExists_args.class, metaDataMap);
     }
 
-    public isDirectoryExists_args() {
+    public directoryExists_args() {
     }
 
-    public isDirectoryExists_args(
+    public directoryExists_args(
       String accessToken,
       String path)
     {
@@ -11589,7 +11589,7 @@ public class FileResource {
     /**
      * Performs a deep copy on <i>other</i>.
      */
-    public isDirectoryExists_args(isDirectoryExists_args other) {
+    public directoryExists_args(directoryExists_args other) {
       if (other.isSetAccessToken()) {
         this.accessToken = other.accessToken;
       }
@@ -11598,8 +11598,8 @@ public class FileResource {
       }
     }
 
-    public isDirectoryExists_args deepCopy() {
-      return new isDirectoryExists_args(this);
+    public directoryExists_args deepCopy() {
+      return new directoryExists_args(this);
     }
 
     @Override
@@ -11612,7 +11612,7 @@ public class FileResource {
       return this.accessToken;
     }
 
-    public isDirectoryExists_args setAccessToken(String accessToken) {
+    public directoryExists_args setAccessToken(String accessToken) {
       this.accessToken = accessToken;
       return this;
     }
@@ -11636,7 +11636,7 @@ public class FileResource {
       return this.path;
     }
 
-    public isDirectoryExists_args setPath(String path) {
+    public directoryExists_args setPath(String path) {
       this.path = path;
       return this;
     }
@@ -11708,12 +11708,12 @@ public class FileResource {
     public boolean equals(Object that) {
       if (that == null)
         return false;
-      if (that instanceof isDirectoryExists_args)
-        return this.equals((isDirectoryExists_args)that);
+      if (that instanceof directoryExists_args)
+        return this.equals((directoryExists_args)that);
       return false;
     }
 
-    public boolean equals(isDirectoryExists_args that) {
+    public boolean equals(directoryExists_args that) {
       if (that == null)
         return false;
 
@@ -11756,7 +11756,7 @@ public class FileResource {
     }
 
     @Override
-    public int compareTo(isDirectoryExists_args other) {
+    public int compareTo(directoryExists_args other) {
       if (!getClass().equals(other.getClass())) {
         return getClass().getName().compareTo(other.getClass().getName());
       }
@@ -11800,7 +11800,7 @@ public class FileResource {
 
     @Override
     public String toString() {
-      StringBuilder sb = new StringBuilder("isDirectoryExists_args(");
+      StringBuilder sb = new StringBuilder("directoryExists_args(");
       boolean first = true;
 
       sb.append("accessToken:");
@@ -11843,15 +11843,15 @@ public class FileResource {
       }
     }
 
-    private static class isDirectoryExists_argsStandardSchemeFactory implements SchemeFactory {
-      public isDirectoryExists_argsStandardScheme getScheme() {
-        return new isDirectoryExists_argsStandardScheme();
+    private static class directoryExists_argsStandardSchemeFactory implements SchemeFactory {
+      public directoryExists_argsStandardScheme getScheme() {
+        return new directoryExists_argsStandardScheme();
       }
     }
 
-    private static class isDirectoryExists_argsStandardScheme extends StandardScheme<isDirectoryExists_args> {
+    private static class directoryExists_argsStandardScheme extends StandardScheme<directoryExists_args> {
 
-      public void read(org.apache.thrift.protocol.TProtocol iprot, isDirectoryExists_args struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol iprot, directoryExists_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TField schemeField;
         iprot.readStructBegin();
         while (true)
@@ -11888,7 +11888,7 @@ public class FileResource {
         struct.validate();
       }
 
-      public void write(org.apache.thrift.protocol.TProtocol oprot, isDirectoryExists_args struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol oprot, directoryExists_args struct) throws org.apache.thrift.TException {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
@@ -11908,16 +11908,16 @@ public class FileResource {
 
     }
 
-    private static class isDirectoryExists_argsTupleSchemeFactory implements SchemeFactory {
-      public isDirectoryExists_argsTupleScheme getScheme() {
-        return new isDirectoryExists_argsTupleScheme();
+    private static class directoryExists_argsTupleSchemeFactory implements SchemeFactory {
+      public directoryExists_argsTupleScheme getScheme() {
+        return new directoryExists_argsTupleScheme();
       }
     }
 
-    private static class isDirectoryExists_argsTupleScheme extends TupleScheme<isDirectoryExists_args> {
+    private static class directoryExists_argsTupleScheme extends TupleScheme<directoryExists_args> {
 
       @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, isDirectoryExists_args struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol prot, directoryExists_args struct) throws org.apache.thrift.TException {
         TTupleProtocol oprot = (TTupleProtocol) prot;
         BitSet optionals = new BitSet();
         if (struct.isSetAccessToken()) {
@@ -11936,7 +11936,7 @@ public class FileResource {
       }
 
       @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, isDirectoryExists_args struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol prot, directoryExists_args struct) throws org.apache.thrift.TException {
         TTupleProtocol iprot = (TTupleProtocol) prot;
         BitSet incoming = iprot.readBitSet(2);
         if (incoming.get(0)) {
@@ -11952,15 +11952,15 @@ public class FileResource {
 
   }
 
-  public static class isDirectoryExists_result implements org.apache.thrift.TBase<isDirectoryExists_result, isDirectoryExists_result._Fields>, java.io.Serializable, Cloneable, Comparable<isDirectoryExists_result>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("isDirectoryExists_result");
+  public static class directoryExists_result implements org.apache.thrift.TBase<directoryExists_result, directoryExists_result._Fields>, java.io.Serializable, Cloneable, Comparable<directoryExists_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("directoryExists_result");
 
     private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.BOOL, (short)0);
 
     private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
     static {
-      schemes.put(StandardScheme.class, new isDirectoryExists_resultStandardSchemeFactory());
-      schemes.put(TupleScheme.class, new isDirectoryExists_resultTupleSchemeFactory());
+      schemes.put(StandardScheme.class, new directoryExists_resultStandardSchemeFactory());
+      schemes.put(TupleScheme.class, new directoryExists_resultTupleSchemeFactory());
     }
 
     public boolean success; // required
@@ -12032,13 +12032,13 @@ public class FileResource {
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(isDirectoryExists_result.class, metaDataMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(directoryExists_result.class, metaDataMap);
     }
 
-    public isDirectoryExists_result() {
+    public directoryExists_result() {
     }
 
-    public isDirectoryExists_result(
+    public directoryExists_result(
       boolean success)
     {
       this();
@@ -12049,13 +12049,13 @@ public class FileResource {
     /**
      * Performs a deep copy on <i>other</i>.
      */
-    public isDirectoryExists_result(isDirectoryExists_result other) {
+    public directoryExists_result(directoryExists_result other) {
       __isset_bitfield = other.__isset_bitfield;
       this.success = other.success;
     }
 
-    public isDirectoryExists_result deepCopy() {
-      return new isDirectoryExists_result(this);
+    public directoryExists_result deepCopy() {
+      return new directoryExists_result(this);
     }
 
     @Override
@@ -12068,7 +12068,7 @@ public class FileResource {
       return this.success;
     }
 
-    public isDirectoryExists_result setSuccess(boolean success) {
+    public directoryExists_result setSuccess(boolean success) {
       this.success = success;
       setSuccessIsSet(true);
       return this;
@@ -12126,12 +12126,12 @@ public class FileResource {
     public boolean equals(Object that) {
       if (that == null)
         return false;
-      if (that instanceof isDirectoryExists_result)
-        return this.equals((isDirectoryExists_result)that);
+      if (that instanceof directoryExists_result)
+        return this.equals((directoryExists_result)that);
       return false;
     }
 
-    public boolean equals(isDirectoryExists_result that) {
+    public boolean equals(directoryExists_result that) {
       if (that == null)
         return false;
 
@@ -12160,7 +12160,7 @@ public class FileResource {
     }
 
     @Override
-    public int compareTo(isDirectoryExists_result other) {
+    public int compareTo(directoryExists_result other) {
       if (!getClass().equals(other.getClass())) {
         return getClass().getName().compareTo(other.getClass().getName());
       }
@@ -12194,7 +12194,7 @@ public class FileResource {
 
     @Override
     public String toString() {
-      StringBuilder sb = new StringBuilder("isDirectoryExists_result(");
+      StringBuilder sb = new StringBuilder("directoryExists_result(");
       boolean first = true;
 
       sb.append("success:");
@@ -12227,15 +12227,15 @@ public class FileResource {
       }
     }
 
-    private static class isDirectoryExists_resultStandardSchemeFactory implements SchemeFactory {
-      public isDirectoryExists_resultStandardScheme getScheme() {
-        return new isDirectoryExists_resultStandardScheme();
+    private static class directoryExists_resultStandardSchemeFactory implements SchemeFactory {
+      public directoryExists_resultStandardScheme getScheme() {
+        return new directoryExists_resultStandardScheme();
       }
     }
 
-    private static class isDirectoryExists_resultStandardScheme extends StandardScheme<isDirectoryExists_result> {
+    private static class directoryExists_resultStandardScheme extends StandardScheme<directoryExists_result> {
 
-      public void read(org.apache.thrift.protocol.TProtocol iprot, isDirectoryExists_result struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol iprot, directoryExists_result struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TField schemeField;
         iprot.readStructBegin();
         while (true)
@@ -12264,7 +12264,7 @@ public class FileResource {
         struct.validate();
       }
 
-      public void write(org.apache.thrift.protocol.TProtocol oprot, isDirectoryExists_result struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol oprot, directoryExists_result struct) throws org.apache.thrift.TException {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
@@ -12279,16 +12279,16 @@ public class FileResource {
 
     }
 
-    private static class isDirectoryExists_resultTupleSchemeFactory implements SchemeFactory {
-      public isDirectoryExists_resultTupleScheme getScheme() {
-        return new isDirectoryExists_resultTupleScheme();
+    private static class directoryExists_resultTupleSchemeFactory implements SchemeFactory {
+      public directoryExists_resultTupleScheme getScheme() {
+        return new directoryExists_resultTupleScheme();
       }
     }
 
-    private static class isDirectoryExists_resultTupleScheme extends TupleScheme<isDirectoryExists_result> {
+    private static class directoryExists_resultTupleScheme extends TupleScheme<directoryExists_result> {
 
       @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, isDirectoryExists_result struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol prot, directoryExists_result struct) throws org.apache.thrift.TException {
         TTupleProtocol oprot = (TTupleProtocol) prot;
         BitSet optionals = new BitSet();
         if (struct.isSetSuccess()) {
@@ -12301,7 +12301,7 @@ public class FileResource {
       }
 
       @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, isDirectoryExists_result struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol prot, directoryExists_result struct) throws org.apache.thrift.TException {
         TTupleProtocol iprot = (TTupleProtocol) prot;
         BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
@@ -12313,16 +12313,16 @@ public class FileResource {
 
   }
 
-  public static class isFileExists_args implements org.apache.thrift.TBase<isFileExists_args, isFileExists_args._Fields>, java.io.Serializable, Cloneable, Comparable<isFileExists_args>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("isFileExists_args");
+  public static class fileExists_args implements org.apache.thrift.TBase<fileExists_args, fileExists_args._Fields>, java.io.Serializable, Cloneable, Comparable<fileExists_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("fileExists_args");
 
     private static final org.apache.thrift.protocol.TField ACCESS_TOKEN_FIELD_DESC = new org.apache.thrift.protocol.TField("accessToken", org.apache.thrift.protocol.TType.STRING, (short)1);
     private static final org.apache.thrift.protocol.TField PATH_FIELD_DESC = new org.apache.thrift.protocol.TField("path", org.apache.thrift.protocol.TType.STRING, (short)2);
 
     private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
     static {
-      schemes.put(StandardScheme.class, new isFileExists_argsStandardSchemeFactory());
-      schemes.put(TupleScheme.class, new isFileExists_argsTupleSchemeFactory());
+      schemes.put(StandardScheme.class, new fileExists_argsStandardSchemeFactory());
+      schemes.put(TupleScheme.class, new fileExists_argsTupleSchemeFactory());
     }
 
     public String accessToken; // required
@@ -12398,13 +12398,13 @@ public class FileResource {
       tmpMap.put(_Fields.PATH, new org.apache.thrift.meta_data.FieldMetaData("path", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(isFileExists_args.class, metaDataMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(fileExists_args.class, metaDataMap);
     }
 
-    public isFileExists_args() {
+    public fileExists_args() {
     }
 
-    public isFileExists_args(
+    public fileExists_args(
       String accessToken,
       String path)
     {
@@ -12416,7 +12416,7 @@ public class FileResource {
     /**
      * Performs a deep copy on <i>other</i>.
      */
-    public isFileExists_args(isFileExists_args other) {
+    public fileExists_args(fileExists_args other) {
       if (other.isSetAccessToken()) {
         this.accessToken = other.accessToken;
       }
@@ -12425,8 +12425,8 @@ public class FileResource {
       }
     }
 
-    public isFileExists_args deepCopy() {
-      return new isFileExists_args(this);
+    public fileExists_args deepCopy() {
+      return new fileExists_args(this);
     }
 
     @Override
@@ -12439,7 +12439,7 @@ public class FileResource {
       return this.accessToken;
     }
 
-    public isFileExists_args setAccessToken(String accessToken) {
+    public fileExists_args setAccessToken(String accessToken) {
       this.accessToken = accessToken;
       return this;
     }
@@ -12463,7 +12463,7 @@ public class FileResource {
       return this.path;
     }
 
-    public isFileExists_args setPath(String path) {
+    public fileExists_args setPath(String path) {
       this.path = path;
       return this;
     }
@@ -12535,12 +12535,12 @@ public class FileResource {
     public boolean equals(Object that) {
       if (that == null)
         return false;
-      if (that instanceof isFileExists_args)
-        return this.equals((isFileExists_args)that);
+      if (that instanceof fileExists_args)
+        return this.equals((fileExists_args)that);
       return false;
     }
 
-    public boolean equals(isFileExists_args that) {
+    public boolean equals(fileExists_args that) {
       if (that == null)
         return false;
 
@@ -12583,7 +12583,7 @@ public class FileResource {
     }
 
     @Override
-    public int compareTo(isFileExists_args other) {
+    public int compareTo(fileExists_args other) {
       if (!getClass().equals(other.getClass())) {
         return getClass().getName().compareTo(other.getClass().getName());
       }
@@ -12627,7 +12627,7 @@ public class FileResource {
 
     @Override
     public String toString() {
-      StringBuilder sb = new StringBuilder("isFileExists_args(");
+      StringBuilder sb = new StringBuilder("fileExists_args(");
       boolean first = true;
 
       sb.append("accessToken:");
@@ -12670,15 +12670,15 @@ public class FileResource {
       }
     }
 
-    private static class isFileExists_argsStandardSchemeFactory implements SchemeFactory {
-      public isFileExists_argsStandardScheme getScheme() {
-        return new isFileExists_argsStandardScheme();
+    private static class fileExists_argsStandardSchemeFactory implements SchemeFactory {
+      public fileExists_argsStandardScheme getScheme() {
+        return new fileExists_argsStandardScheme();
       }
     }
 
-    private static class isFileExists_argsStandardScheme extends StandardScheme<isFileExists_args> {
+    private static class fileExists_argsStandardScheme extends StandardScheme<fileExists_args> {
 
-      public void read(org.apache.thrift.protocol.TProtocol iprot, isFileExists_args struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol iprot, fileExists_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TField schemeField;
         iprot.readStructBegin();
         while (true)
@@ -12715,7 +12715,7 @@ public class FileResource {
         struct.validate();
       }
 
-      public void write(org.apache.thrift.protocol.TProtocol oprot, isFileExists_args struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol oprot, fileExists_args struct) throws org.apache.thrift.TException {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
@@ -12735,16 +12735,16 @@ public class FileResource {
 
     }
 
-    private static class isFileExists_argsTupleSchemeFactory implements SchemeFactory {
-      public isFileExists_argsTupleScheme getScheme() {
-        return new isFileExists_argsTupleScheme();
+    private static class fileExists_argsTupleSchemeFactory implements SchemeFactory {
+      public fileExists_argsTupleScheme getScheme() {
+        return new fileExists_argsTupleScheme();
       }
     }
 
-    private static class isFileExists_argsTupleScheme extends TupleScheme<isFileExists_args> {
+    private static class fileExists_argsTupleScheme extends TupleScheme<fileExists_args> {
 
       @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, isFileExists_args struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol prot, fileExists_args struct) throws org.apache.thrift.TException {
         TTupleProtocol oprot = (TTupleProtocol) prot;
         BitSet optionals = new BitSet();
         if (struct.isSetAccessToken()) {
@@ -12763,7 +12763,7 @@ public class FileResource {
       }
 
       @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, isFileExists_args struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol prot, fileExists_args struct) throws org.apache.thrift.TException {
         TTupleProtocol iprot = (TTupleProtocol) prot;
         BitSet incoming = iprot.readBitSet(2);
         if (incoming.get(0)) {
@@ -12779,15 +12779,15 @@ public class FileResource {
 
   }
 
-  public static class isFileExists_result implements org.apache.thrift.TBase<isFileExists_result, isFileExists_result._Fields>, java.io.Serializable, Cloneable, Comparable<isFileExists_result>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("isFileExists_result");
+  public static class fileExists_result implements org.apache.thrift.TBase<fileExists_result, fileExists_result._Fields>, java.io.Serializable, Cloneable, Comparable<fileExists_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("fileExists_result");
 
     private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.BOOL, (short)0);
 
     private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
     static {
-      schemes.put(StandardScheme.class, new isFileExists_resultStandardSchemeFactory());
-      schemes.put(TupleScheme.class, new isFileExists_resultTupleSchemeFactory());
+      schemes.put(StandardScheme.class, new fileExists_resultStandardSchemeFactory());
+      schemes.put(TupleScheme.class, new fileExists_resultTupleSchemeFactory());
     }
 
     public boolean success; // required
@@ -12859,13 +12859,13 @@ public class FileResource {
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(isFileExists_result.class, metaDataMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(fileExists_result.class, metaDataMap);
     }
 
-    public isFileExists_result() {
+    public fileExists_result() {
     }
 
-    public isFileExists_result(
+    public fileExists_result(
       boolean success)
     {
       this();
@@ -12876,13 +12876,13 @@ public class FileResource {
     /**
      * Performs a deep copy on <i>other</i>.
      */
-    public isFileExists_result(isFileExists_result other) {
+    public fileExists_result(fileExists_result other) {
       __isset_bitfield = other.__isset_bitfield;
       this.success = other.success;
     }
 
-    public isFileExists_result deepCopy() {
-      return new isFileExists_result(this);
+    public fileExists_result deepCopy() {
+      return new fileExists_result(this);
     }
 
     @Override
@@ -12895,7 +12895,7 @@ public class FileResource {
       return this.success;
     }
 
-    public isFileExists_result setSuccess(boolean success) {
+    public fileExists_result setSuccess(boolean success) {
       this.success = success;
       setSuccessIsSet(true);
       return this;
@@ -12953,12 +12953,12 @@ public class FileResource {
     public boolean equals(Object that) {
       if (that == null)
         return false;
-      if (that instanceof isFileExists_result)
-        return this.equals((isFileExists_result)that);
+      if (that instanceof fileExists_result)
+        return this.equals((fileExists_result)that);
       return false;
     }
 
-    public boolean equals(isFileExists_result that) {
+    public boolean equals(fileExists_result that) {
       if (that == null)
         return false;
 
@@ -12987,7 +12987,7 @@ public class FileResource {
     }
 
     @Override
-    public int compareTo(isFileExists_result other) {
+    public int compareTo(fileExists_result other) {
       if (!getClass().equals(other.getClass())) {
         return getClass().getName().compareTo(other.getClass().getName());
       }
@@ -13021,7 +13021,7 @@ public class FileResource {
 
     @Override
     public String toString() {
-      StringBuilder sb = new StringBuilder("isFileExists_result(");
+      StringBuilder sb = new StringBuilder("fileExists_result(");
       boolean first = true;
 
       sb.append("success:");
@@ -13054,15 +13054,15 @@ public class FileResource {
       }
     }
 
-    private static class isFileExists_resultStandardSchemeFactory implements SchemeFactory {
-      public isFileExists_resultStandardScheme getScheme() {
-        return new isFileExists_resultStandardScheme();
+    private static class fileExists_resultStandardSchemeFactory implements SchemeFactory {
+      public fileExists_resultStandardScheme getScheme() {
+        return new fileExists_resultStandardScheme();
       }
     }
 
-    private static class isFileExists_resultStandardScheme extends StandardScheme<isFileExists_result> {
+    private static class fileExists_resultStandardScheme extends StandardScheme<fileExists_result> {
 
-      public void read(org.apache.thrift.protocol.TProtocol iprot, isFileExists_result struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol iprot, fileExists_result struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TField schemeField;
         iprot.readStructBegin();
         while (true)
@@ -13091,7 +13091,7 @@ public class FileResource {
         struct.validate();
       }
 
-      public void write(org.apache.thrift.protocol.TProtocol oprot, isFileExists_result struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol oprot, fileExists_result struct) throws org.apache.thrift.TException {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
@@ -13106,16 +13106,16 @@ public class FileResource {
 
     }
 
-    private static class isFileExists_resultTupleSchemeFactory implements SchemeFactory {
-      public isFileExists_resultTupleScheme getScheme() {
-        return new isFileExists_resultTupleScheme();
+    private static class fileExists_resultTupleSchemeFactory implements SchemeFactory {
+      public fileExists_resultTupleScheme getScheme() {
+        return new fileExists_resultTupleScheme();
       }
     }
 
-    private static class isFileExists_resultTupleScheme extends TupleScheme<isFileExists_result> {
+    private static class fileExists_resultTupleScheme extends TupleScheme<fileExists_result> {
 
       @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, isFileExists_result struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol prot, fileExists_result struct) throws org.apache.thrift.TException {
         TTupleProtocol oprot = (TTupleProtocol) prot;
         BitSet optionals = new BitSet();
         if (struct.isSetSuccess()) {
@@ -13128,7 +13128,7 @@ public class FileResource {
       }
 
       @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, isFileExists_result struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol prot, fileExists_result struct) throws org.apache.thrift.TException {
         TTupleProtocol iprot = (TTupleProtocol) prot;
         BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {

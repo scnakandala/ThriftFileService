@@ -60,7 +60,7 @@ public class SampleFileResourceClient {
 
     public boolean isDirectoryExists(String path){
         try{
-            return getClient().isDirectoryExists("", path);
+            return getClient().directoryExists("", path);
         } catch (TException e) {
             e.printStackTrace();
         }
